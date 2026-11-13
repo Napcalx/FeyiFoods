@@ -91,7 +91,7 @@ footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}footer h3
 <p class="lead">Real Ingredients. Real Food. A Brighter Tomorrow.</p>
 <div class="ctas"><a class="btn light" href="#waitlist">Join the Waitlist</a><a class="btn light alt" href="#jaggery">Learn About Jaggery Cubes</a></div></div>
 <div class="art photo" style="background-image:url(images/hero.jpg),radial-gradient(circle at 35% 30%,#fff7e6,#F8F3EA 55%,#AFC8A4)" role="img" aria-label="Jaggery cubes with green leaves">
-<svg viewBox="0 0 300 260" width="80%" aria-hidden="true"><use href="#leaf" x="150" y="10" width="120" height="120" transform="rotate(20 210 70)"/><use href="#leaf" x="20" y="20" width="100" height="100" transform="rotate(-70 70 70)"/><use href="#cube" x="40" y="110" width="110" height="110" transform="rotate(-8 95 165)"/><use href="#cube" x="140" y="130" width="100" height="100" transform="rotate(10 190 180)"/><use href="#cube" x="105" y="60" width="90" height="90" transform="rotate(4 150 105)"/></svg></div></div></section>
+</div></div></section>
 
 <section id="why"><div class="wrap"><div class="center"><p class="script">Why FeyiFoods?</p><h2>Food you can trust, from farm to table</h2></div>
 <div class="badges">
@@ -118,7 +118,7 @@ footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}footer h3
 <article class="cat"><div class="ico">🥜</div><span class="tag">Coming soon</span><h3>Healthy Snacks</h3><p>Simple, satisfying bites made with real ingredients.</p></article>
 <article class="cat"><div class="ico">🍵</div><span class="tag">Coming soon</span><h3>Drinks</h3><p>Naturally better ways to refresh and sweeten your day.</p></article></div></div></section>
 
-<section class="feat"><div class="wrap"><div class="two"><div class="cubes" role="img" aria-label="Jaggery cubes on a wooden board"><svg viewBox="0 0 300 220" width="75%" aria-hidden="true"><use href="#cube" x="30" y="70" width="100" height="100" transform="rotate(-6 80 120)"/><use href="#cube" x="125" y="40" width="95" height="95" transform="rotate(8 172 87)"/><use href="#cube" x="165" y="115" width="90" height="90" transform="rotate(-4 210 160)"/></svg></div>
+<section class="feat"><div class="wrap"><div class="two"><div class="cubes" role="img" aria-label="Jaggery cubes on a wooden board"></div>
 <div><p class="script">Featured Product</p><h2>FeyiFoods Jaggery Cubes</h2>
 <ul class="checks"><li>Rich flavour</li><li>Convenient cube format</li></ul>
 <p>A naturally better way to sweeten your day. Here is how we love to use them:</p>
@@ -159,7 +159,7 @@ f.addEventListener("submit",async e=>{e.preventDefault();msg.className="";msg.te
  go.disabled=true;go.textContent="Saving…";
  try{const r=await fetch("/api/waitlist",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}),j=await r.json();
   if(!r.ok)throw new Error(j.error||"Something went wrong.");
-  msg.className="ok";msg.textContent=j.duplicate?"You’re already on the list. We’ll be in touch soon!":"You’re on the list! Watch your inbox for launch news.";f.reset();
+  msg.className="ok";msg.textContent=j.duplicate?"You’re already on the list. Thank you!":"You’re on the list! Thank you for joining the FeyiFoods waitlist.";f.reset();
  }catch(err){msg.className="err";msg.textContent=err.message||"Something went wrong. Please try again."}
  go.disabled=false;go.textContent="Reserve My Spot";});
 </script>
