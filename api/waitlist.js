@@ -1,6 +1,8 @@
 // Vercel serverless function: POST /api/waitlist
-const URL_ = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
-const TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
+// Finds the Upstash/KV credentials whatever prefix Vercel gave them (e.g. FEYI_KV_REST_API_URL)
+const find = (suffix) => { const k = Object.keys(process.env).find((n) => n.endsWith(suffix) && !n.includes("READ_ONLY")); return k ? process.env[k] : undefined; };
+const URL_ = process.env.UPSTASH_REDIS_REST_URL || find("KV_REST_API_URL") || find("REDIS_REST_URL");
+const TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN || find("KV_REST_API_TOKEN") || find("REDIS_REST_TOKEN");
 const ALLOWED = ["Jaggery Cubes", "Granola", "Seeds", "Healthy Snacks", "Drinks", "Everything"];
 
 module.exports = async (req, res) => {
